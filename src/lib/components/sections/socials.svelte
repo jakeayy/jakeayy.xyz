@@ -1,0 +1,19 @@
+<script lang="ts">
+    import { CONTACT, SOCIAL_MEDIA } from "$lib/const";
+    import type { SocialMedia } from "$lib/social";
+    import SocialItem from "./socials/socialItem.svelte";
+</script>
+
+{#snippet socialCategory(title: string, items: SocialMedia[], titleTemplate?: string)}
+    <div class="flex flex-col gap-2">
+        <h1>{title}</h1>
+        <div class="flex flex-row gap-5 justify-center">
+            {#each items as item}<SocialItem item={item} titleTemplate={titleTemplate} />{/each}
+        </div>
+    </div>
+{/snippet}
+
+<div class="text-center h-full w-full grid sm:grid-cols-2 gap-15 items-center justify-center p-15">
+    {@render socialCategory("Social Media", SOCIAL_MEDIA, "Check out {} on {}")}
+    {@render socialCategory("Contacts", CONTACT, "Contact {} through {}")}
+</div>

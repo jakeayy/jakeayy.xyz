@@ -1,0 +1,31 @@
+@import "tailwindcss";
+@import "@catppuccin/tailwindcss/mocha.css";
+
+@font-face {
+  font-family: 'Iosevka';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url($lib/assets/fonts/Iosevka-Regular-latin-400.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: "NerdFont";
+  src: url("$lib/assets/fonts/nerd-font.woff2") format("woff2");
+}
+
+@layer base {
+    body {
+        @apply bg-ctp-mantle text-ctp-text;
+        font-family: "Iosevka", "NerdFont", monospace;
+    }
+    a {
+        @apply text-ctp-blue;
+        &:hover { @apply text-ctp-blue-200; }
+    }
+    h1 { @apply text-3xl font-bold; }
+    span[title] {
+        @apply decoration-2 underline decoration-dotted underline-offset-3;
+        &:hover { @apply decoration-solid; }
+    }
+}

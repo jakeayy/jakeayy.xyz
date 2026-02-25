@@ -1,0 +1,13 @@
+{
+    "$schema": "./node_modules/wrangler/config-schema.json",
+    "name": "www",
+    "main": "./.cloudflare/worker.js",
+    "site": {
+            "bucket": "./.cloudflare/public"
+    },
+    "build": {
+            "command": "bun run build"
+    },
+    "compatibility_date": "2026-02-19",
+    "compatibility_flags": [ "nodejs_compat" ]
+}

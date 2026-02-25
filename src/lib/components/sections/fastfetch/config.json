@@ -1,0 +1,33 @@
+[
+    {
+        "type": "host"
+    },
+    {
+        "type": "name",
+        "key": "   name:"
+    },
+    {
+        "type": "text",
+        "key": "   pronouns:",
+        "format": "he/they"
+    },
+    {
+        "type": "uptime",
+        "key": "   uptime:"
+    },
+    {
+        "type": "text",
+        "key": "   nationality:",
+        "format": "Poland"
+    },
+    {
+        "type": "text",
+        "key": "   languages:",
+        "format": "Typescript, Rust, ...and more"
+    },
+    {
+        "type": "text",
+        "key": "   hobbies:",
+        "format": "Software Dev, Video Editing"
+    }
+]
