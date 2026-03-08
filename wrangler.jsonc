@@ -10,10 +10,6 @@
     "site": {
         "bucket": "./.cloudflare/public",
     },
-    "assets": {
-        "directory": "./.cloudflare/public",
-        "html_handling": "force-trailing-slash"
-    },
     "build": {
             "command": "bun run build"
     },

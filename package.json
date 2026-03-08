@@ -15,6 +15,7 @@
 	"engineStrict": true,
 	"type": "module",
 	"scripts": {
+		"dev:wrangler": "wrangler dev",
 		"dev": "vite dev",
 		"build": "vite build",
 		"preview": "vite preview",
