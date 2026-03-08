@@ -9,7 +9,7 @@
 	let { data } = $props();
 
 	const date = $derived(new Date(data.meta.date!))
-	const navArr = page.url.pathname
+	const navArr = page.url.pathname.replace(/\/$/, "")
 		.slice(1)
 		.split("/")
 		.reduce<string[]>((p, currStr) => {

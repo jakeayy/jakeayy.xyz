@@ -15,7 +15,7 @@
 </script>
 
 <div class="flex flex-col py-1 gap-1 border-2 border-ctp-subtext0 bg-ctp-base select-none">
-    <h3 class="text-ctp-overlay0">{title}</h3>
+    <span class="text-ctp-overlay0">{title}</span>
 
     <div class="flex flex-row flex-wrap gap-2 justify-center overflow-y-auto max-w-64">
         {#each selection as item (item)}
