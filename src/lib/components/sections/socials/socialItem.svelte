@@ -1,5 +1,5 @@
 <script lang="ts">
-    import Link from "$lib/components/link.svelte";
+    import Link from "$lib/components/Link.svelte";
     import { NAME } from "$lib/const";
     import { ICON_MAP, type SocialMedia } from "$lib/social";
     import CheckIcon from "$lib/assets/icons/check.svg?component"
@@ -22,16 +22,18 @@
             .replace("{}", NAME)
             .replace("{}", typeFormatted)
     )
-    let shouldTryCopy = $derived(typeof item.url !== "string")
+    let shouldCopy = $derived(typeof item.url !== "string")
 
-    async function handleClick(event: MouseEvent, item: SocialMedia, shouldCopy: boolean = true) {
-        // ignore link click handling as it's handled by Link tag
-        if (!shouldCopy || !item.text) {
-            actionState = null;
+    async function handleClick(event: MouseEvent, item: SocialMedia) {
+        // ignore if clicked empty event/link
+        if (!shouldCopy || !item.text)
             return
-        }
 
         event.preventDefault()
+
+        // currently has a state
+        if (actionState) return;
+
         actionState = await navigator.clipboard.writeText(item.text)
             .then(() => true)
             .catch(e => {
@@ -39,23 +41,19 @@
                 console.error("Could not copy to clipboard", e)
                 return false
             })
-    }
 
-    // autoset to null after time
-    $effect(() => {
-        if (actionState === null) return
         setTimeout(() => ( actionState = null ), 1000)
-    })
+    }
 </script>
 
 <Link
-    title={title}
+    {title}
     href={item.url ?? "#"}
-    onclick={(event) => handleClick(event, item, shouldTryCopy)}
+    onclick={(event) => handleClick(event, item)}
     class={[
             "transition-colors duration-200",
             actionState === null
-                ? "hover:text-ctp-text text-ctp-subtext0"
+                ? "text-ctp-subtext0 hover:text-ctp-text"
                 : (actionState ? "text-ctp-green" : "text-ctp-red")
         ]}
 >

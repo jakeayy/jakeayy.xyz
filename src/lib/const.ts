@@ -1,4 +1,4 @@
-import type { SocialMedia } from "./social"
+import type { SocialMedia } from "$lib/social"
 
 export const NAME = "Jake"
 export const USERNAME = "jakeayy"

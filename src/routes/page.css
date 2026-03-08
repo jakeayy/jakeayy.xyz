@@ -1,0 +1,9 @@
+@font-face {
+    font-family: "NerdFont";
+    font-display: optional;
+    src: url("$lib/assets/fonts/nerd-font.woff2") format("woff2");
+}
+
+body {
+    font-family: "Iosevka", "NerdFont", monospace;
+}

@@ -6,9 +6,11 @@
 
 {#snippet socialCategory(title: string, items: SocialMedia[], titleTemplate?: string)}
     <div class="flex flex-col gap-2">
-        <h1>{title}</h1>
+        <h2>{title}</h2>
         <div class="flex flex-row gap-5 justify-center">
-            {#each items as item}<SocialItem item={item} titleTemplate={titleTemplate} />{/each}
+            {#each items as item, i (item.text ?? item.url ?? `${item.type}-${i}`)}
+                <SocialItem item={item} titleTemplate={titleTemplate} />
+            {/each}
         </div>
     </div>
 {/snippet}

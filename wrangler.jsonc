@@ -8,6 +8,9 @@
     "build": {
             "command": "bun run build"
     },
+    "vars": {
+        "PUBLIC_BASE_URL": "https://jakeayy.xyz"
+    },
     "compatibility_date": "2026-02-19",
     "compatibility_flags": [ "nodejs_compat" ]
 }

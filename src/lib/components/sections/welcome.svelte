@@ -2,9 +2,10 @@
     import logo from "./fastfetch/logo.txt?raw"
     import config from "./fastfetch/config.json"
     import { HOSTNAME, NAME, BIRTHDAY } from "$lib/const";
+    import { untrack } from "svelte";
 
-    let uptime = $state("")
-    function calculateUptime() {
+    let uptime = $state("...")
+    $effect(() => {
         const now = new Date()
 
         let years = now.getFullYear() - BIRTHDAY.getFullYear();
@@ -26,8 +27,8 @@
         if (months > 0) parts.push(`${months} ${months === 1 ? 'month' : 'months'}`);
         if (days > 0 || parts.length === 0) parts.push(`${days} ${days === 1 ? 'day' : 'days'}`);
 
-        return parts.join(', ');
-    }
+        untrack(() => { uptime = parts.join(', ') })
+    })
 
     type FetchFragment = { text: string, color?: SupportedColors, bold?: boolean }
     class Fragments extends Array {
@@ -103,12 +104,10 @@
     if (config.length < logoLines.length)
         fragments.push({ text: logoLines.slice(config.length).join("\n"), bold: false, color: MAIN_COLOR })
 
-    // update bday on load
-    $effect(() => { uptime = calculateUptime() })
 </script>
 
 <div class="*:whitespace-pre p-2 overflow-x-auto h-full">
-    {#each fragments as { text, bold, color }}
+    {#each fragments as { text, bold, color }, i (i)}
         {@const finalText = text.replaceAll("{uptime}", uptime)}
         <span
             class={[

@@ -4,28 +4,35 @@
 @font-face {
   font-family: 'Iosevka';
   font-style: normal;
-  font-display: swap;
+  font-display: optional;
   font-weight: 400;
   src: url($lib/assets/fonts/Iosevka-Regular-latin-400.woff2) format('woff2');
-}
-
-@font-face {
-  font-family: "NerdFont";
-  src: url("$lib/assets/fonts/nerd-font.woff2") format("woff2");
 }
 
 @layer base {
     body {
         @apply bg-ctp-mantle text-ctp-text;
-        font-family: "Iosevka", "NerdFont", monospace;
+        font-family: "Iosevka", monospace;
+        scrollbar-color: theme("color-ctp-text") theme("color-ctp-base");
     }
-    a {
-        @apply text-ctp-blue;
-        &:hover { @apply text-ctp-blue-200; }
-    }
-    h1 { @apply text-3xl font-bold; }
-    span[title] {
-        @apply decoration-2 underline decoration-dotted underline-offset-3;
-        &:hover { @apply decoration-solid; }
+
+    h1, h2, h3, h4 { font-family: monospace; }
+
+    a { @apply text-ctp-blue hover:text-ctp-blue-300; }
+    h1 { @apply text-5xl font-bold; }
+    h2 { @apply text-3xl font-bold; }
+    h3 { @apply text-2xl font-bold; }
+    span[title] { @apply decoration-2 underline decoration-dotted hover:decoration-solid underline-offset-3; }
+    ::placeholder { @apply text-ctp-overlay0; }
+
+    li { @apply list-inside list-['+_']; }
+
+    input[type="search"] {
+        &::-webkit-search-decoration,
+        &::-webkit-search-cancel-button,
+        &::-webkit-search-results-button,
+        &::-webkit-search-results-decoration {
+            display: none;
+        }
     }
 }

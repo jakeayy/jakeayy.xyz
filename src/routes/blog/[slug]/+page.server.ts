@@ -1,13 +1,14 @@
 import { dev } from "$app/environment";
-import type { PostImport } from "$lib/blog";
+import { getBlogPostMeta } from "$lib/blog.js";
+import { basename } from "path";
 
 export function entries() {
-    const posts = import.meta.glob<PostImport>("$blog/*.md", { eager: true })
+    const posts = getBlogPostMeta()
 
     return Object.entries(posts)
-		.filter(([, p]) => p.metadata?.published || dev)
+		.filter(([, m]) => m && (m.published || dev))
 		.map(([path]) => {
-			const slug = path.split('/').pop()?.replace('.md', '')!;
+			const slug = basename(path, ".md");
 			return { slug };
 		});
 }

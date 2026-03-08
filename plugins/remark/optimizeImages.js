@@ -4,16 +4,19 @@ import { visit } from "unist-util-visit";
 export default () => (tree) => {
 	/** @type {{ name: string, url: string }[]} */
 	const images = [];
+
 	visit(tree, "image", (node) => {
-		if (!node.url.startsWith("http")) {
-			const name = `__img_${images.length}`;
-			images.push({ name, url: node.url });
-			
-			node.data ??= {};
-			node.data.hName = "Image";
-			node.data.hProperties ??= {};
-			node.data.hProperties.src = `{${name}}`;
-		}
+		if (node.url.startsWith("http")) return;
+
+		const name = `__img_${images.length}`;
+
+		node.data ??= {};
+		node.data.hName = "Image";
+		node.data.hProperties ??= {};
+		node.data.hProperties.src = `{${name}}`;
+		node.data.hProperties.alt = node.alt;
+
+		images.push({ name: name, url: node.url });
 	});
 
 	if (images.length > 0) {
@@ -33,7 +36,7 @@ export default () => (tree) => {
 		else
 			tree.children.push({
 				type: "html",
-				value: `<script lang={"ts"}>${scriptCode}</script>`
+				value: `<script lang="ts">${scriptCode}</script>`
 			});
 	}
 };

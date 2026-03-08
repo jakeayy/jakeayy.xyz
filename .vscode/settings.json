@@ -2,5 +2,5 @@
 	"files.associations": {
 		"*.css": "tailwindcss"
 	},
-	"vscord.app.privacyMode.enable": false
+	"vscord.app.privacyMode.enable": true
 }

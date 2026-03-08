@@ -1,5 +1,10 @@
-<script>
-	let { src, alt, ...rest } = $props();
+<script lang="ts">
+	type Props = {
+		src: string,
+		alt?: string,
+	}
+
+	let { src, alt }: Props = $props();
 </script>
 
-<enhanced:img {src} {alt} {...rest} />
+<enhanced:img {src} {alt} />

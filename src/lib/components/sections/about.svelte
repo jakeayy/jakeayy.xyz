@@ -1,7 +1,7 @@
 <script lang="ts">
     import Avatar from "$lib/assets/avatar.png?enhanced"
     import { NAME, USERNAME } from "$lib/const";
-    import Link from "../link.svelte";
+    import Link from "$lib/components/Link.svelte";
 </script>
 
 <div class="grid sm:grid-cols-2 p-5 w-full h-full *:flex *:justify-center *:items-center gap-5">

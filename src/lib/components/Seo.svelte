@@ -1,19 +1,11 @@
 <script lang="ts">
+    import { page } from '$app/state';
     import { PUBLIC_BASE_URL } from '$env/static/public';
 	import favicon from '$lib/assets/icons/favicon.svg?url';
     import { USERNAME } from '$lib/const';
+    import type { SeoData } from '$lib/types/seo';
 
-    type Props = {
-        title?: string,
-        themeColor?: {
-            light?: string,
-            dark?: string
-        },
-        description?: string,
-        keywords?: string[],
-        image?: string,
-        icon?: string
-    }
+    import mainFont from "$lib/assets/fonts/Iosevka-Regular-latin-400.woff2?url"
 
     let {
         title,
@@ -21,17 +13,18 @@
         description,
         keywords,
         image,
-        icon
-    }: Props = $props()
+        icon,
+        ldJson
+    }: SeoData = $props()
 </script>
 
 {#if typeof title === "string"}
     {@const domain = new URL(PUBLIC_BASE_URL).hostname}
-    {@const fullTitle = title ? `${title} - ${domain}` : domain}
+    {@const fullTitle = title ? `${title} | ${domain}` : domain}
     
     <title>{fullTitle}</title>
-    <meta property="og:title" content={title} />
-    <meta name="twitter:title" content={title} />
+    <meta property="og:title" content={fullTitle} />
+    <meta name="twitter:title" content={fullTitle} />
 {/if}
 <link rel="icon" href={icon || favicon} />
 {#if themeColor?.light}
@@ -63,3 +56,8 @@
 {/if}
 <meta name="author" content={USERNAME} />
 <meta property="og:type" content="website" />
+<link rel="canonical" href={`${PUBLIC_BASE_URL}${page.url.pathname}`} />
+<link rel="preload" href={mainFont} as="font" crossorigin="anonymous" />
+{#if ldJson}
+    <svelte:element this={"script"} type="application/ld+json">{JSON.stringify(ldJson)}</svelte:element>
+{/if}

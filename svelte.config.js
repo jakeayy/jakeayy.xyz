@@ -1,24 +1,17 @@
 import adapter from '@sveltejs/adapter-cloudflare-workers';
 import { mdsvex } from 'mdsvex';
+import mdsvexOptions from './mdsvex.config.js';
 import { join } from 'path';
-
-import remarkOptimizeImages from "./plugins/remark/optimizeImages.js"
-import remarkReplaceLinks from './plugins/remark/replaceLinks.js';
 
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 	extensions: ['.svelte', '.md', '.svx'],
-	preprocess: [
-		mdsvex({
-			extensions: ['.svx', '.md'],
-			remarkPlugins: [remarkOptimizeImages, remarkReplaceLinks]
-		})
-	],
+	preprocess: [mdsvex(mdsvexOptions)],
 	kit: {
 		adapter: adapter(),
 		alias: {
-			"$blog/*": join(import.meta.dirname, "src", "blog", "*")
+			"@/*": join(import.meta.dirname, "src", "*")
 		},
 		prerender: {
 			handleUnseenRoutes({ message, routes }) {
