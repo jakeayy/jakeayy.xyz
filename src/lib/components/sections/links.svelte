@@ -14,7 +14,7 @@
 
     let selectedLink = $state(0)
     const LINKS: Link[] = [
-        { title: "Blog Posts", image: BlogLink, url: "/blog" },
+        { title: "Blog Posts", image: BlogLink, url: "/blog/" },
     ]
 </script>
 

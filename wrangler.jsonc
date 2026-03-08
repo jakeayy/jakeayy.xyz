@@ -1,15 +1,17 @@
 {
     "$schema": "./node_modules/wrangler/config-schema.json",
-    "name": "www",
+    "name": "jakeayy-xyz",
     "main": "./.cloudflare/worker.js",
+    "placement": {
+        "mode": "smart"
+    },
+    "workers_dev": false,
+    "preview_urls": false,
     "site": {
             "bucket": "./.cloudflare/public"
     },
     "build": {
             "command": "bun run build"
-    },
-    "vars": {
-        "PUBLIC_BASE_URL": "https://jakeayy.xyz"
     },
     "compatibility_date": "2026-02-19",
     "compatibility_flags": [ "nodejs_compat" ]
