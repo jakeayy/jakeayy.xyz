@@ -37,10 +37,10 @@ Now you should be ready to conitrbute to the project! You can optionally install
 
 
 ## Credits
-Check [the CREDITS.md file](/CREDITS.md) for any needed credits
+Check [the CREDITS.md file](CREDITS.md) for any needed credits
 
 
 ## License
-This project is running under [MIT license](/LICENSE), please ensure to check licenses of other projects used here before doing anything!
+This project is running under [MIT license](LICENSE), please ensure to check licenses of other projects used here before doing anything!
 
 If you have concerns, questions or requests that are related to licensing please contact me through solutions provided on my profile or the website.
