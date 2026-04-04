@@ -55,7 +55,7 @@
 
     const COLORS_MAP = {
         "grey": "text-ctp-subtext0",
-        "lavender": "text-ctp-lavender",
+        "lavender": "text-ctp-mauve-400",
         "text": "text-ctp-text"
     }
     type SupportedColors = keyof typeof COLORS_MAP

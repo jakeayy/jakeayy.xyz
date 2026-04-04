@@ -21,7 +21,7 @@ For the simplest blog posts, you don't even need a server! It'll very likely wor
 ## Prerequisites
 This guide is prepared the way as if I was making the site, as it looks like the most maintainable way for me without having to pay for professional databases, VPSes, and such. **You don't need to follow it 1-to-1 and you should always do your own research before deciding!** The more creative way usually is better for you and possibly for the people visiting it!
 
-And as always, you can visit the [GitHub repo of this project](https://github.com/jakeayy/jakeayy-xyz) if you want to get inspired by something! (Credits optional but welcome!)
+And as always, you can visit the [GitHub repo of this project](https://codeberg.org/jakeayy/jakeayy.xyz) if you want to get inspired by something! (Credits optional but welcome!)
 
 What you'll need for a setup like the one I have is:
 - Some basic web dev knowledge (duh)

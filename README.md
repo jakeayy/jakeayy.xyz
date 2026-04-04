@@ -27,8 +27,8 @@ And if you're on Windows... [¯\\\_(ツ)\_/¯](https://youtu.be/pVI_smLgTY0?t=35
 ### Commands
 ```sh
 # Clone the repo and cd into it
-git clone https://github.com/jakeayy/jakeayy-xyz.git
-cd jakeayy-xyz
+git clone https://codeberg.org/jakeayy/jakeayy.xyz.git
+cd jakeayy.xyz
 
 # Install dependencies
 bun install
