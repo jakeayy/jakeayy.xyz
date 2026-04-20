@@ -10,7 +10,7 @@ export const SOCIAL_MEDIA = [
     { type: "youtube", url: "https://www.youtube.com/@jakeayy_yt" },
     { type: "github", url: "https://github.com/jakeayy" },
     { type: "codeberg", url: "https://codeberg.org/jakeayy/" },
-    { type: "twitter", url: "https://twitter.com/jakeayy_" },
+    { type: "twitter", url: "https://twitter.com/jakeayy0" },
     { type: "bluesky", url: "https://bsky.app/profile/jakeayy.xyz" },
     { type: "discord", url: "https://discord.gg/3TGEBNc7HJ" }
 ] as const satisfies SocialMedia[]
