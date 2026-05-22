@@ -1,4 +1,4 @@
-import adapter from '@sveltejs/adapter-cloudflare-workers';
+import adapter from '@sveltejs/adapter-cloudflare';
 import { mdsvex } from 'mdsvex';
 import mdsvexOptions from './mdsvex.config.js';
 import { join } from 'path';

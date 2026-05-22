@@ -1,5 +1,5 @@
 {
-    "$schema": "./node_modules/wrangler/config-schema.json",
+	"$schema": "./node_modules/wrangler/config-schema.json",
     "name": "jakeayy-xyz",
     "main": "./.cloudflare/worker.js",
     "placement": {
@@ -7,9 +7,10 @@
     },
     "workers_dev": false,
     "preview_urls": false,
-    "site": {
-        "bucket": "./.cloudflare/public"
-    },
+	"assets": {
+		"directory": ".cloudflare/public",
+		"binding": "ASSETS"
+	},
     "build": {
             "command": "pnpm run build"
     },
