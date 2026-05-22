@@ -21,7 +21,10 @@ const seo: Partial<SeoData> = {
         USERNAME,
         ...["portfolio", "socials", "projects"].map(str => `${USERNAME} ${str}`),
         ...[...SOCIAL_MEDIA, ...CONTACT].map(i => `${USERNAME} ${i.type}`)
-    ]
+    ],
+	fediverse: {
+		me: "https://social.tchncs.de/@jakeayy"
+	}
 }
 
 export function load() {

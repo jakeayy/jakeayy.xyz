@@ -4,12 +4,13 @@
     import { untrack, type Component } from "svelte";
     import { HOSTNAME, NAME } from "$lib/const";
     import nerdFontWoff from "$lib/assets/fonts/nerd-font.woff2?url"
+	import WelcomeSection from "$lib/components/sections/welcome.svelte"
     
-    type SectionType = Promise<{ default: Component }>
+    type SectionType = Component | Promise<{ default: Component }>
 
     let currentSection = $state<number>(0)
     const SECTIONS: [string, SectionType][] = [
-        ["Welcome", import("$lib/components/sections/welcome.svelte")],
+        ["Welcome", WelcomeSection],
         ["About", import("$lib/components/sections/about.svelte")],
         ["Socials & Contact", import("$lib/components/sections/socials.svelte")],
         ["Useful Links", import("$lib/components/sections/links.svelte")]
@@ -128,7 +129,8 @@
     </span>
     <div class="w-full h-full overflow-x-hidden overflow-y-auto *:w-full *:h-full">
         {#each SECTIONS as [sectionName, sectionValue], i (sectionName)}
-            {#await sectionValue then { default: Section }}
+            {#await sectionValue then value}
+				{@const Section = "default" in value ? value.default : value}
                 <section
                     style:display={currentSection === i ? "block" : "none"}
                     class="relative w-full h-full"

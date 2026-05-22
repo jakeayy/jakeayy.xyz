@@ -14,7 +14,8 @@
         keywords,
         image,
         icon,
-        ldJson
+        ldJson,
+		fediverse
     }: SeoData = $props()
 </script>
 
@@ -57,6 +58,12 @@
 <meta name="author" content={USERNAME} />
 <meta property="og:type" content="website" />
 <link rel="canonical" href={`${PUBLIC_BASE_URL}${page.url.pathname}`} />
+{#if fediverse?.creator}
+	<meta name="fediverse:creator" content={fediverse.creator}>
+{/if}
+{#if fediverse?.me}
+	<link rel="me" href={fediverse.me} />
+{/if}
 <link rel="preload" href={mainFont} as="font" crossorigin="anonymous" />
 {#if ldJson}
     <svelte:element this={"script"} type="application/ld+json">{JSON.stringify(ldJson)}</svelte:element>

@@ -8,5 +8,9 @@ export type SeoData = {
         light?: string,
         dark?: string
     },
-    ldJson?: Record<string, unknown>
+    ldJson?: Record<string, unknown>,
+	fediverse?: {
+		creator?: string,
+		me?: string
+	}
 }

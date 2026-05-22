@@ -38,6 +38,9 @@ export async function load({ params: { slug } }: PageServerLoadEvent) {
 			description: post.metadata.description,
 			image: fullResolvedImage,
 			datePublished: post.metadata.date
+		},
+		fediverse: {
+			creator: "@jakeayy@social.tchncs.de"
 		}
 	}
 
