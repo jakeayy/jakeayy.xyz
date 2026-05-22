@@ -21,7 +21,7 @@ And if you're on Windows... [¯\\\_(ツ)\_/¯](https://youtu.be/pVI_smLgTY0?t=35
     - `apt install git` on debian/ubuntu-based distros
     - `sudo pacman -S git` on arch-based distros
     - (...or your way of installing packages on your distro)
-- [`bun`](https://bun.sh/) - Project strictly uses bun package manager, it should work with any other one but do mind that pull requests will not be accepted with multiple `package-lock` files!
+- [`pnpm`](https://pnpm.io/) - Project uses pnpm package manager, it should work with any other one but do mind that pull requests will not be accepted with multiple `package-lock` files!
 - `<any mature code editor>` - I recommend using VSCode-based editor as the project contains extension recommendations that might be useful for you!
 
 ### Commands
@@ -31,7 +31,7 @@ git clone https://codeberg.org/jakeayy/jakeayy.xyz.git
 cd jakeayy.xyz
 
 # Install dependencies
-bun install
+pnpm install --frozen-lockfile
 ```
 Now you should be ready to conitrbute to the project! You can optionally install extensions the workspace recommend as they are generally needed when programming in Svelte
 
