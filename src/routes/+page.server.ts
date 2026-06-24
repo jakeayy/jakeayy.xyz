@@ -1,6 +1,6 @@
 import { PUBLIC_BASE_URL } from "$env/static/public";
 import { CONTACT, SOCIAL_MEDIA, USERNAME } from "$lib/const";
-import avatar from "$lib/assets/avatar.png?enhanced"
+import avatar from "$lib/assets/img/avatar.png?enhanced"
 import type { SeoData } from "$lib/types/seo";
 
 const ldJson = 	{

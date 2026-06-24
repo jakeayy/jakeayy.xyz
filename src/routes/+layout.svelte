@@ -1,6 +1,6 @@
 <script lang="ts">
 	import './layout.css';
-	import avatar from '$lib/assets/avatar.png?enhanced';
+	import avatar from '$lib/assets/img/avatar.png?enhanced';
 	import iosevkaFontWoff from "$lib/assets/fonts/Iosevka-Regular-latin-400.woff2?url"
 
 	import { PUBLIC_BASE_URL } from "$env/static/public"
