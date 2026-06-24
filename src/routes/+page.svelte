@@ -121,7 +121,7 @@
 
 <main
     bind:this={consoleEl}
-    class="border-2 bg-ctp-base shadow-2xl/60 shadow-crust border-ctp-mauve fixed top-1/2 left-1/2 -translate-1/2 w-[calc(100vw-1rem)] h-[calc(100vh-1rem)] max-w-2xl max-h-112 flex flex-col"
+    class="border-2 bg-ctp-base shadow-2xl/60 shadow-crust border-ctp-mauve fixed top-1/2 left-1/2 -translate-1/2 w-[calc(100vw-1rem)] h-[calc(100vh-1rem)] max-w-3xl max-h-112 flex flex-col"
 >
     <span class="p-2 border-b border-ctp-mauve">
         <span class="text-ctp-subtext0">[{NAME.toLowerCase()}@{HOSTNAME} ~]$</span>

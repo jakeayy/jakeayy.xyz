@@ -106,7 +106,7 @@
 
 </script>
 
-<div class="*:whitespace-pre p-2 overflow-x-auto h-full">
+<div class="whitespace-pre p-2 overflow-x-auto h-full">
     {#each fragments as { text, bold, color }, i (i)}
         {@const finalText = text.replaceAll("{uptime}", uptime)}
         <span
