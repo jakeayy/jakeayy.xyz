@@ -19,5 +19,5 @@ export const CONTACT = [
     { type: "matrix", url: "https://matrix.to/#/@jakeayy:tchncs.de" },
     { type: "mail", url: "mailto:contact@jakeayy.xyz" },
     { type: "discord", text: "jakeayy." },
-    { type: "telegram", url: "https://t.me/jakeayy_tg" }
+    { type: "telegram", url: "http://telegram.me/jakeayy_tg" }
 ] as const satisfies SocialMedia[]
