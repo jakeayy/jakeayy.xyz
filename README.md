@@ -1,4 +1,4 @@
-# jakeayy.xyz
+# jakeayy.ch
 A personal portfolio made by me that utilizes various techniques and modern solutions for fast and responsive website!
 
 
@@ -27,8 +27,8 @@ And if you're on Windows... [¯\\\_(ツ)\_/¯](https://youtu.be/pVI_smLgTY0?t=35
 ### Commands
 ```sh
 # Clone the repo and cd into it
-git clone https://codeberg.org/jakeayy/jakeayy.xyz.git
-cd jakeayy.xyz
+git clone https://codeberg.org/jakeayy/jakeayy.ch.git
+cd jakeayy.ch
 
 # Install dependencies
 pnpm install --frozen-lockfile

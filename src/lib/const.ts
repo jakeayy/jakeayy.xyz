@@ -2,7 +2,7 @@ import type { SocialMedia } from "$lib/social"
 
 export const NAME = "Jake"
 export const USERNAME = "jakeayy"
-export const HOSTNAME = "jakeayy-xyz"
+export const HOSTNAME = "jakeayy-ch"
 export const BIRTHDAY = new Date(2005, 4, 27)
 
 
