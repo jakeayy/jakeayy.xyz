@@ -1,21 +1,5 @@
-import { dev } from "$app/environment";
 import type { Picture } from "@sveltejs/enhanced-img";
-import type { PostMetadata } from "$lib/types/blog";
 import { PUBLIC_BASE_URL } from "$env/static/public";
-
-export function isValidPost(meta: Partial<PostMetadata>): meta is PostMetadata {
-    return typeof meta.title === "string"
-		&& typeof meta.published === "boolean"
-		&& typeof meta.date === "string"
-        && (meta.published || dev)
-}
-
-export const getBlogPostMeta = () =>
-    import.meta.glob<PostMetadata>("./*.md", {
-        eager: true,
-        import: "metadata",
-        base: "../blog/"
-    })
 
 const blogImageMap =
             import.meta.glob<Picture>("./**/*.{png,jpg,webp,gif,avif}", {

@@ -1,6 +1,7 @@
 import { generateRSS, createPostRSSItem } from "$lib/rss";
-import { getBlogImage, getBlogPostMeta, isValidPost } from "$lib/blog";
-import { NAME, USERNAME, HOSTNAME } from "$lib/const";
+import { getBlogImage } from "$lib/blog";
+import { getBlogPostMeta, isValidPost } from "$lib/blog-meta.server"
+import { NAME, USERNAME } from "$lib/const";
 import { PUBLIC_BASE_URL } from "$env/static/public";
 import type { FullPostMetadata } from "$lib/types/blog";
 import { basename } from "path";
@@ -31,7 +32,7 @@ const rssItems = posts.map(createPostRSSItem);
 
 const rss = generateRSS(rssItems, {
 	title: `${NAME}'s Blog`,
-	description: `Latest blog posts from ${NAME} (${USERNAME}) on ${HOSTNAME}`,
+	description: `Latest blog posts from ${NAME} (${USERNAME}) on ${new URL(PUBLIC_BASE_URL).hostname}`,
 	link: `${PUBLIC_BASE_URL}/blog`,
 	language: "en",
 	copyright: `${NAME}`,

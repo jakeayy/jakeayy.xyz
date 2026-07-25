@@ -5,8 +5,6 @@
     import { USERNAME } from '$lib/const';
     import type { SeoData } from '$lib/types/seo';
 
-    import mainFont from "$lib/assets/fonts/Iosevka-Regular-latin-400.woff2?url"
-
     let {
         title,
         themeColor,
@@ -17,16 +15,18 @@
         ldJson,
 		fediverse
     }: SeoData = $props()
+
+    const domain = new URL(PUBLIC_BASE_URL).hostname
 </script>
 
 {#if typeof title === "string"}
-    {@const domain = new URL(PUBLIC_BASE_URL).hostname}
     {@const fullTitle = title ? `${title} | ${domain}` : domain}
-    
+
     <title>{fullTitle}</title>
     <meta property="og:title" content={fullTitle} />
     <meta name="twitter:title" content={fullTitle} />
 {/if}
+<meta name="og:site_name" content={domain} />
 <link rel="icon" href={icon || favicon} />
 {#if themeColor?.light}
     <meta
@@ -64,7 +64,6 @@
 {#if fediverse?.me}
 	<link rel="me" href={fediverse.me} />
 {/if}
-<link rel="preload" href={mainFont} as="font" crossorigin="anonymous" />
 {#if ldJson}
     <svelte:element this={"script"} type="application/ld+json">{JSON.stringify(ldJson)}</svelte:element>
 {/if}

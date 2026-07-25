@@ -31,10 +31,10 @@ What you'll need for a setup like the one I have is:
 ## Easiest Setup
 If you want to get up and running as fast as possible, you can just let MDsveX turn your markdown files directly into Svelte routes. 
 
-Assuming you already have a fresh SvelteKit project set up (if not, you can run `bun create svelte@latest my-blog`), you'll first need to install MDsveX as a dev dependency:
+Assuming you already have a fresh SvelteKit project set up (if not, you can run `pnpm create svelte my-blog`), you'll first need to install MDsveX as a dev dependency:
 
 ```bash
-bun add -d mdsvex
+pnpm add -d mdsvex
 ```
 
 Next, open your `svelte.config.js` and tell Svelte to use MDsveX to preprocess your files, keeping an eye out for `.md` or `.svx` extensions:
@@ -111,7 +111,7 @@ Now, we just render it in our `+page.svelte`:
 
 ### Static hosting
 
-If you want to host this on GitHub Pages without a Node server, just add `export const prerender = true;` to your `+page.ts`. When you run `bun run build`, SvelteKit will crawl your links and bake out those dynamic endpoints into fast, static HTML files!
+If you want to host this on GitHub Pages without a Node server, just add `export const prerender = true;` to your `+page.ts`. When you run `pnpm run build`, SvelteKit will crawl your links and bake out those dynamic endpoints into fast, static HTML files!
 
 ## Alternatives?
 

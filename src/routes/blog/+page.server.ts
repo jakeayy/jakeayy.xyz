@@ -1,4 +1,5 @@
-import { getBlogImage, getBlogPostMeta, isValidPost } from "$lib/blog";
+import { getBlogImage } from "$lib/blog";
+import { getBlogPostMeta, isValidPost } from "$lib/blog-meta.server"
 import { USERNAME } from "$lib/const";
 import type { FullPostMetadata} from "$lib/types/blog";
 import type { SeoData } from "$lib/types/seo";
@@ -30,7 +31,7 @@ export function load() {
         .toSorted(([, a], [, b]) =>
             new Date(b.date).getTime() - new Date(a.date).getTime()
         )
-    
+
     return {
         seo,
         posts

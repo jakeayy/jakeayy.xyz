@@ -11,7 +11,7 @@
     import { resolve } from "$app/paths";
 
     let { data } = $props()
-    
+
     const allTags = $derived([...new Set(
         data.posts
             .filter(([, p]) => p.tags && p.tags.length > 0)
@@ -36,18 +36,20 @@
     const latestPost = $derived<FullPostMetadata | undefined>(data.posts[0])
     const filteredPosts = $derived(
         data.posts
-            .filter(([, p]) =>
-                (
-                    !searchValue
-                    || p.title.toLowerCase().includes(searchValue.toLowerCase())
-                    || (!p.description || p.description.toLowerCase().includes(searchValue.toLowerCase()))
+            .filter(([, p]) => {
+              const search = searchValue?.toLowerCase()
+
+              return (
+                    !search
+                    || p.title.toLowerCase().includes(search)
+                    || p.description?.toLowerCase().includes(search)
                 )
                 &&
                 (
                     selectedTags.length === 0
                     || (p.tags && p.tags.length > 0 && selectedTags.every(t => p.tags?.includes(t)))
                 )
-            )
+            })
     )
 </script>
 

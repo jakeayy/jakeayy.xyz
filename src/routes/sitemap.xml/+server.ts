@@ -1,6 +1,8 @@
-import { getBlogPostMeta, isValidPost } from "$lib/blog";
+import { getBlogPostMeta, isValidPost } from "$lib/blog-meta.server";
 import { PUBLIC_BASE_URL } from "$env/static/public";
 import { basename } from "path";
+
+export const prerender = true;
 
 export function GET() {
     // STATIC PAGES

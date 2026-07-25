@@ -1,5 +1,5 @@
 import { dev } from "$app/environment";
-import { getBlogPostMeta } from "$lib/blog.js";
+import { getBlogPostMeta } from "$lib/blog-meta.server";
 import { basename } from "path";
 
 export function entries() {

@@ -3,11 +3,15 @@ import { visit } from "unist-util-visit";
 /** @returns {import("unified").Plugin} */
 export default () => (tree) => {
     let shouldImport = false
-    visit(tree, "link", (node) => {
+  visit(tree, "link", (node) => {
+    const url = node.url || ""
+
+    if (/^(https?:)?\/\//.test(url)) {
         shouldImport ||= true
 
         node.data ??= {}
         node.data.hName = "Link"
+      }
     });
 
     if (shouldImport) {
