@@ -77,7 +77,7 @@
     </div>
 {/snippet}
 
-<div class="flex flex-col gap-6 mx-6">
+<div class="flex flex-col gap-6 lg:mx-6">
     <header class="flex flex-col gap-5 text-center">
         <div>
             {#if latestPost && latestPost[1].image}
@@ -98,7 +98,7 @@
                     />
                 </button>
             {/if}
-            <div class="flex flex-row justify-center items-center gap-3 mt-15">
+            <div class="flex flex-row justify-center items-center gap-3">
                 <h1 class="inline">Blog Posts</h1>
                 <a
                     data-sveltekit-reload
@@ -110,7 +110,7 @@
         </div>
         <div class="flex flex-col">
             <span class="text-ctp-subtext0">Search:</span>
-            <div class="flex flex-row justify-center gap-5 *:w-max h-24">
+            <div class="flex flex-row flex-wrap justify-center gap-5 *:w-max h-24">
                 <SearchBox
                     placeholder="...by title/description"
                     bind:value={searchValue}
@@ -123,7 +123,7 @@
             </div>
         </div>
     </header>
-    <main class="w-full max-sm:flex max-sm:flex-col sm:grid sm:grid-cols-2 gap-3 border border-ctp-subtext0 bg-ctp-base p-3">
+    <main class="my-10 w-full max-sm:flex max-sm:flex-col sm:grid sm:grid-cols-2 gap-3 border-t lg:border-l lg:border-r lg:mb-5 lg:border-b border-ctp-subtext0 bg-ctp-base p-3">
         {#each filteredPosts as post (post[0])}
             {@render postItem(post)}
         {/each}

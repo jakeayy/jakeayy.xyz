@@ -22,20 +22,20 @@
 	onMount(() => {
 		if (!data.meta.tags?.includes("android"))
 			return;
-		
+
 		if (window.__ANDROID_BANNER_LOADED__) return;
 		window.__ANDROID_BANNER_LOADED__ = true;
 
 		const script = document.createElement('script');
 		script.src = "https://keepandroidopen.org/banner.js";
 		script.async = true;
-		
+
 		document.head.appendChild(script);
 	});
 </script>
 
-<main class="flex flex-col gap-10">
-	<header class="flex flex-col gap-5">
+<main class="flex flex-col gap-10 mb-8 items-center">
+	<header class="flex flex-col gap-5 w-9/10">
 		{#if data.meta.image}
 			<enhanced:img
 				fetchpriority="high"
@@ -64,19 +64,11 @@
 			<span class="text-ctp-subtext1 italic">{data.meta.description}</span>
 		{/if}
 	</header>
-	<article>
+	<article class="p-5 border-ctp-overlay0 sm:w-9/10 border-t sm:border-l sm:border-b sm:border-r flex flex-col gap-4">
 		{@render data.content()}
 	</article>
 </main>
 
-<style lang="postcss">
-	@reference "../../layout.css";
-
-	main {
-		@apply mx-32 my-16;
-	}
-
-	article {
-		@apply p-5 border-ctp-overlay0 border flex flex-col gap-4;
-	}
+<style>
+	:global(pre.shiki) { white-space: pre-wrap; }
 </style>
