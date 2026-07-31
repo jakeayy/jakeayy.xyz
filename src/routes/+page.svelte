@@ -167,6 +167,7 @@
         src="$lib/assets/img/sif.png"
         loading="lazy"
         fetchpriority="low"
+        sizes="min(28rem, 100vw)"
     />
 </Link>
 
