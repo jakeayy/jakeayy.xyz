@@ -6,7 +6,7 @@
 
 <div class="grid sm:grid-cols-2 p-5 w-full h-full *:flex *:justify-center *:items-center gap-5">
     <div>
-        <div class="border-2 border-ctp-mauve w-max h-max">
+        <div class="border-2 border-accent w-max h-max">
             <img class="slow-load select-none avatar" alt="Avatar" src={Avatar} height="250" width="250" />
         </div>
     </div>

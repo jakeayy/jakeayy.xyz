@@ -7,10 +7,6 @@ settings:
 importers:
 
   .:
-    dependencies:
-      '@catppuccin/tailwindcss':
-        specifier: ^1.0.0
-        version: 1.0.0
     devDependencies:
       '@eslint/compat':
         specifier: ^2.1.0
@@ -86,10 +82,6 @@ importers:
         version: 4.104.0(@cloudflare/workers-types@4.20260624.1)
 
 packages:
-
-  '@catppuccin/tailwindcss@1.0.0':
-    resolution: {integrity: sha512-l8pOlcYe2ncGd8a1gUmL5AHmKlxR2+CHuG5kt4Me6IZwzntW1DoLmj89BH+DcsPHBsdDGLrTSv35emlYyU3FeQ==}
-    engines: {node: '>=22.0.0'}
 
   '@cloudflare/kv-asset-handler@0.5.0':
     resolution: {integrity: sha512-jxQYkj8dSIzc0cD6cMMNdOc1UVjqSqu8BZdor5s8cGjW2I8BjODt/kWPVdY+u9zj3ms75Q5qaZgnxUad83+eAg==}
@@ -1895,8 +1887,6 @@ packages:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
 
 snapshots:
-
-  '@catppuccin/tailwindcss@1.0.0': {}
 
   '@cloudflare/kv-asset-handler@0.5.0': {}
 

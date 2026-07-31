@@ -23,6 +23,6 @@
 <style lang="postcss">
     @reference "@/routes/layout.css";
 
-    .indicator { @apply absolute top-1/2 -translate-y-1/2 text-ctp-subtext0 text-lg transition-opacity duration-200 ease-out not-group-hover:opacity-0; }
-    .heading { @apply relative text-ctp-text transition-transform duration-200 ease-out group-hover:translate-x-5; }
+    .indicator { @apply absolute top-1/2 -translate-y-1/2 text-muted text-lg transition-opacity duration-200 ease-out not-group-hover:opacity-0; }
+    .heading { @apply relative text-fg transition-transform duration-200 ease-out group-hover:translate-x-5; }
 </style>

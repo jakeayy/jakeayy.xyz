@@ -53,8 +53,8 @@
     class={[
             "transition-colors duration-200",
             actionState === null
-                ? "text-ctp-subtext0 hover:text-ctp-text"
-                : (actionState ? "text-ctp-green" : "text-ctp-red")
+                ? "text-muted hover:text-fg"
+                : (actionState ? "text-fg" : "text-accent")
         ]}
 >
     <Icon height={40}/>

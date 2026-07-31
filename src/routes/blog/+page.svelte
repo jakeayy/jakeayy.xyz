@@ -56,7 +56,7 @@
 {#snippet postItem([slug, { title, tags, date: dateStr, image, description }]: FullPostMetadata)}
     {@const date = new Date(dateStr)}
 
-    <div class="flex flex-col border border-ctp-subtext0 bg-ctp-mantle">
+    <div class="flex flex-col border border-muted bg-canvas">
         {#if image}
             <enhanced:img
                 alt={`${title} - Preview`}
@@ -66,12 +66,12 @@
         {/if}
         <div class="flex flex-col gap-2 p-3">
             <TagRenderer tags={tags} />
-            <a class="text-ctp-subtext0" href={resolve("/blog/[slug]", { slug })} data-sveltekit-preload-code>
+            <a class="text-muted" href={resolve("/blog/[slug]", { slug })} data-sveltekit-preload-code>
                 <h2>{title}</h2>
             </a>
             <DateRenderer {date} />
             {#if description}
-                <span class="text-ctp-subtext1">{description}</span>
+                <span class="text-muted">{description}</span>
             {/if}
         </div>
     </div>
@@ -89,7 +89,7 @@
                 >
                     <div class="relative z-10 top-1/2 -translate-y-1/2 not-group-hover:opacity-0">
                         <h2>Go to latest post</h2>
-                        <span class="text-ctp-subtext0">{meta.title}</span>
+                        <span class="text-muted">{meta.title}</span>
                     </div>
                     <enhanced:img
                         class="relative object-cover h-full w-full mask-[linear-gradient(to_bottom,black,transparent)] group-hover:brightness-90 group-hover:blur-xs"
@@ -106,10 +106,10 @@
                     title="Subscribe to RSS feed"
                 ><RssIcon height={30} /></a>
             </div>
-            <a href={resolve("/")} class="text-ctp-subtext0">[Go back]</a>
+            <a href={resolve("/")} class="text-muted">[Go back]</a>
         </div>
         <div class="flex flex-col">
-            <span class="text-ctp-subtext0">Search:</span>
+            <span class="text-muted">Search:</span>
             <div class="flex flex-row flex-wrap justify-center gap-5 *:w-max h-24">
                 <SearchBox
                     placeholder="...by title/description"
@@ -123,7 +123,7 @@
             </div>
         </div>
     </header>
-    <main class="my-10 w-full max-sm:flex max-sm:flex-col sm:grid sm:grid-cols-2 gap-3 border-t lg:border-l lg:border-r lg:mb-5 lg:border-b border-ctp-subtext0 bg-ctp-base p-3">
+    <main class="my-10 w-full max-sm:flex max-sm:flex-col sm:grid sm:grid-cols-2 gap-3 border-t lg:border-l lg:border-r lg:mb-5 lg:border-b border-muted bg-surface p-3">
         {#each filteredPosts as post (post[0])}
             {@render postItem(post)}
         {/each}

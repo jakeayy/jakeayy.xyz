@@ -18,7 +18,7 @@
     ]
 </script>
 
-<div class="relative z-10 top-1/2 -translate-y-1/2 *:absolute *:top-1/2 *:-translate-y-1/2 *:text-ctp-subtext0 *:hover:text-ctp-text">
+<div class="relative z-10 top-1/2 -translate-y-1/2 *:absolute *:top-1/2 *:-translate-y-1/2 *:text-muted *:hover:text-fg">
     <ArrowLeft class={selectedLink > 0 ? "left-0" : "hidden"} height={80} onclick={() => ( selectedLink-- )} />
     <ArrowRight class={selectedLink < (LINKS.length - 1) ? "right-0" : "hidden"} height={80} onclick={() => ( selectedLink++ )} />
 </div>
@@ -30,7 +30,7 @@
         href={resolve(url as Pathname)}
         {title}
     >
-        <h1 class="absolute z-10 top-1/2 left-1/2 -translate-1/2 text-ctp-subtext0 transition-all duration-150 ease-out group-hover:text-ctp-text group-hover:scale-110">{title}</h1>
+        <h1 class="absolute z-10 top-1/2 left-1/2 -translate-1/2 text-muted transition-all duration-150 ease-out group-hover:text-fg group-hover:scale-110">{title}</h1>
         <enhanced:img
             class="object-cover w-full h-full transition-all duration-150 ease-out not-group-hover:blur-xs group-hover:brightness-90 group-hover:scale-105"
             alt={title} src={image}

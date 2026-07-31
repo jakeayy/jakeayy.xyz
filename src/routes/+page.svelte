@@ -1,11 +1,15 @@
 <script lang="ts">
     import "./page.css"
-    
+
     import { untrack, type Component } from "svelte";
     import { HOSTNAME, NAME } from "$lib/const";
     import nerdFontWoff from "$lib/assets/fonts/nerd-font.woff2?url"
+    import bgVideo from "$lib/assets/vid/bg.webm"
+    import bgVideoPoster from "$lib/assets/img/bg.webm-poster.webp"
 	import WelcomeSection from "$lib/components/sections/welcome.svelte"
-    
+    import Link from "@/lib/components/Link.svelte";
+    import { resolve } from "$app/paths";
+
     type SectionType = Component | Promise<{ default: Component }>
 
     let currentSection = $state<number>(0)
@@ -61,13 +65,13 @@
                 break;
         }
 
-        consoleEl.animate(animation, { 
+        consoleEl.animate(animation, {
             composite: "replace",
             duration: 300,
             easing: "ease-out"
         })
     }
-    
+
     // rickroll click handle
     $effect(() => {
         const handleClick = ({ key, repeat }: KeyboardEvent) => {
@@ -119,12 +123,13 @@
 	<link rel="preload" as="font" type="font/woff2" href={nerdFontWoff} crossorigin="anonymous" />
 </svelte:head>
 
+<!-- terminal -->
 <main
     bind:this={consoleEl}
-    class="border-2 bg-ctp-base shadow-2xl/60 shadow-crust border-ctp-mauve fixed top-1/2 left-1/2 -translate-1/2 w-[calc(100vw-1rem)] h-[calc(100vh-1rem)] max-w-3xl max-h-112 flex flex-col"
+    class="border-2 bg-surface/70 shadow-2xl/60 border-accent fixed top-1/2 left-1/2 -translate-1/2 w-[calc(100vw-1rem)] h-[calc(100vh-1rem)] max-w-3xl max-h-112 flex flex-col"
 >
-    <span class="p-2 border-b border-ctp-mauve">
-        <span class="text-ctp-subtext0">[{NAME.toLowerCase()}@{HOSTNAME} ~]$</span>
+    <span class="p-2 border-b border-accent">
+        <span class="text-muted">[{NAME.toLowerCase()}@{HOSTNAME} ~]$</span>
         <span class="font-bold">{currentTitle}</span>
     </span>
     <div class="w-full h-full overflow-x-hidden overflow-y-auto *:w-full *:h-full">
@@ -150,15 +155,44 @@
     </nav>
 </main>
 
+<!-- siffrin img -->
+<Link
+    title="I love Siffrin <3"
+    href="https://instarsandtime.wiki.gg/wiki/Siffrin"
+    class="opacity-80 hover:opacity-100 transition-opacity"
+>
+    <enhanced:img
+        alt="Siffrin"
+        class="fixed drop-shadow-xl/60 bottom-0 left-[82vw] max-w-md object-contain max-lg:hidden"
+        src="$lib/assets/img/sif.png"
+        loading="lazy"
+        fetchpriority="low"
+    />
+</Link>
+
+<!-- explicit footer -->
+<footer class="text-sm fixed bottom-2 left-1/2 -translate-x-1/2 flex flex-row gap-10">
+    <a title="Terms of Use" href={resolve("/terms")}>Terms</a>
+    <Link title="Source Code" href="https://codeberg.org/jakeayy/jakeayy.ch">Source Code</Link>
+</footer>
+
+<!-- background -->
+<video
+    class="fixed left-0 top-0 -z-10 w-full h-full object-cover blur-xs brightness-25"
+    autoplay muted loop playsinline poster={bgVideoPoster}
+>
+    <source src={bgVideo} type="video/webm" />
+</video>
+
 <style lang="postcss">
     @reference "./layout.css";
 
     .nav-btn {
-        @apply w-full h-full transition-all duration-150 border-t border-ctp-mauve;
+        @apply w-full h-full transition-all duration-150 border-t border-accent;
 
         &:hover { @apply z-10; }
         &[data-selected], &:hover {
-            @apply bg-ctp-mauve text-ctp-base scale-110 shadow-2xl/100;
+            @apply bg-accent text-surface scale-110 shadow-2xl/100;
         }
     }
 </style>

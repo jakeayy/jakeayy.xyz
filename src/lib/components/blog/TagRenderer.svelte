@@ -10,11 +10,11 @@
 </script>
 
 {#if tags && tags.length > 0}
-    <div class="flex flex-row flex-wrap gap-2 *:border-ctp-subtext0 *:border *:px-2">
+    <div class="flex flex-row flex-wrap gap-2 *:border-muted *:border *:px-2">
         {#each tags as tag (tag)}
             <a
                 href={resolve(`/blog?tags=${encodeURIComponent(tag)}` as Pathname)}
-                class="text-ctp-subtext0"
+                class="text-muted"
             >{tag}</a>
         {/each}
     </div>

@@ -1,5 +1,14 @@
 @import "tailwindcss";
-@import "@catppuccin/tailwindcss/mocha.css";
+
+@theme {
+    --color-canvas: #2b2b2b;
+    --color-surface: #3a3a3a;
+    --color-fg: #e6e6e6;
+    --color-muted: #b0b0b0;
+    --color-faint: #8a8a8a;
+    --color-accent: #f4f4f4;
+    --color-accent-soft: #cccccc;
+}
 
 @font-face {
   font-family: 'Iosevka';
@@ -11,19 +20,19 @@
 
 @layer base {
     body {
-        @apply bg-ctp-mantle text-ctp-text;
+        @apply bg-canvas text-fg;
         font-family: "Iosevka", monospace;
-        scrollbar-color: theme("color-ctp-text") theme("color-ctp-base");
+        scrollbar-color: theme("color-fg") theme("color-canvas");
     }
 
     h1, h2, h3, h4 { font-family: monospace; }
 
-    a { @apply text-ctp-blue hover:text-ctp-blue-300; }
+    a { @apply text-accent hover:text-accent-soft; }
     h1 { @apply text-5xl font-bold; }
     h2 { @apply text-3xl font-bold; }
     h3 { @apply text-2xl font-bold; }
     span[title] { @apply decoration-2 underline decoration-dotted hover:decoration-solid underline-offset-3; }
-    ::placeholder { @apply text-ctp-overlay0; }
+    ::placeholder { @apply text-faint; }
 
     li { @apply list-inside list-['+_']; }
 

@@ -54,13 +54,13 @@
     }
 
     const COLORS_MAP = {
-        "grey": "text-ctp-subtext0",
-        "lavender": "text-ctp-mauve-400",
-        "text": "text-ctp-text"
+        "grey": "text-muted",
+        "accent": "text-accent-soft",
+        "text": "text-fg"
     }
     type SupportedColors = keyof typeof COLORS_MAP
 
-    const MAIN_COLOR: SupportedColors = "lavender"
+    const MAIN_COLOR: SupportedColors = "accent"
     const KEY_WIDTH = 20
 
     const logoLines = logo.split("\n")

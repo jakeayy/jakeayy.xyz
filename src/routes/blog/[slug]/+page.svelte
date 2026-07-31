@@ -49,7 +49,7 @@
 				{#each ["/", ...navArr] as nav, i (nav)}
 					{@const title = nav.split("/").pop()!}
 					<a
-						class="bg-ctp-mauve text-ctp-base hover:font-bold px-2"
+						class="bg-accent text-surface hover:font-bold px-2"
 						title={title}
 						href={resolve(nav as Pathname)}
 					>{i === 0 ? `[ROOT]` : title}</a>
@@ -61,10 +61,10 @@
 			<TagRenderer tags={data.meta?.tags} />
 		</div>
 		{#if data.meta.description}
-			<span class="text-ctp-subtext1 italic">{data.meta.description}</span>
+			<span class="text-muted italic">{data.meta.description}</span>
 		{/if}
 	</header>
-	<article class="p-5 border-ctp-overlay0 sm:w-9/10 border-t sm:border-l sm:border-b sm:border-r flex flex-col gap-4">
+	<article class="p-5 border-faint sm:w-9/10 border-t sm:border-l sm:border-b sm:border-r flex flex-col gap-4">
 		{@render data.content()}
 	</article>
 </main>

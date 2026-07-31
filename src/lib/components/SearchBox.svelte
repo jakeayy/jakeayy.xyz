@@ -13,7 +13,7 @@
     }: Props = $props();
 </script>
 
-<div class="bg-ctp-base flex flex-row items-center gap-3 border-2 border-ctp-subtext0 group focus-within:border-ctp-text p-3 h-max">
+<div class="bg-surface flex flex-row items-center gap-3 border-2 border-muted group focus-within:border-fg p-3 h-max">
     <Search height="1em" />
     <input
         class="w-full h-full focus:outline-0"
