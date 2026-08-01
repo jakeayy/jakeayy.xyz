@@ -2,6 +2,7 @@
     import Avatar from "$lib/assets/img/avatar.avif"
     import { NAME, USERNAME } from "$lib/const";
     import Link from "$lib/components/Link.svelte";
+    import Tooltip from "../Tooltip.svelte";
 </script>
 
 <div class="grid sm:grid-cols-2 p-5 w-full h-full *:flex *:justify-center *:items-center gap-5">
@@ -16,7 +17,7 @@
             computer programming, security researching or just creating content!
             <br><br>
             I'm currently most known for projects such as <Link href="https://github.com/jakeayy/gif-validator">Discord GIFs Validator</Link>
-            and <Link href="https://codeberg.org/jakeayy/Starshift">my mod loader for <span title="In Stars and Time">ISAT</span>!</Link>
+            and <Link href="https://codeberg.org/jakeayy/Starshift">my mod loader for <Tooltip text="ISAT = In Stars and Time"><span>ISAT</span></Tooltip>!</Link>
         </span>
     </div>
 </div>

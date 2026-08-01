@@ -31,7 +31,6 @@
     h1 { @apply text-5xl font-bold; }
     h2 { @apply text-3xl font-bold; }
     h3 { @apply text-2xl font-bold; }
-    span[title] { @apply decoration-2 underline decoration-dotted hover:decoration-solid underline-offset-3; }
     ::placeholder { @apply text-faint; }
 
     li { @apply list-inside list-['+_']; }

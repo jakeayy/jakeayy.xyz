@@ -4,6 +4,7 @@
     import { ICON_MAP, type SocialMedia } from "$lib/social";
     import CheckIcon from "$lib/assets/icons/check.svg?component"
     import CrossIcon from "$lib/assets/icons/cross.svg?component"
+    import Tooltip from "../../Tooltip.svelte";
 
     type Props = { item: SocialMedia, titleTemplate?: string }
 
@@ -21,6 +22,7 @@
         (titleTemplate ?? `Visit ${typeFormatted}`)
             .replace("{}", NAME)
             .replace("{}", typeFormatted)
+        + `\n(${item.text ?? item.url?.replace(/^(https?:\/\/(www\.)?)|(mailto:)/, "")})`
     )
     let shouldCopy = $derived(typeof item.url !== "string")
 
@@ -46,16 +48,17 @@
     }
 </script>
 
-<Link
-    {title}
-    href={item.url ?? "#"}
-    onclick={(event) => handleClick(event, item)}
-    class={[
-            "transition-colors duration-200",
-            actionState === null
-                ? "text-muted hover:text-fg"
-                : (actionState ? "text-fg" : "text-accent")
-        ]}
->
-    <Icon height={40}/>
-</Link>
+<Tooltip text={actionState === null ? title : actionState ? "Copied!" : "Failed to copy..."}>
+    <Link
+        href={item.url ?? "#"}
+        onclick={(event) => handleClick(event, item)}
+        class={[
+                "transition-colors duration-200",
+                actionState === null
+                    ? "text-muted hover:text-fg"
+                    : (actionState ? "text-fg" : "text-accent")
+            ]}
+    >
+        <Icon height={40}/>
+    </Link>
+</Tooltip>

@@ -6,9 +6,9 @@
     import type { FullPostMetadata } from "$lib/types/blog.js";
     import { page } from "$app/state"
     import DateRenderer from "$lib/components/blog/DateRenderer.svelte";
-    import { goto } from "$app/navigation";
     import { untrack } from "svelte";
     import { resolve } from "$app/paths";
+    import Background from "@/lib/components/Background.svelte";
 
     let { data } = $props()
 
@@ -77,26 +77,26 @@
     </div>
 {/snippet}
 
-<div class="flex flex-col gap-6 lg:mx-6">
-    <header class="flex flex-col gap-5 text-center">
+<div class="flex flex-col">
+    <header class="flex flex-col gap-5 pb-15 text-center bg-linear-to-b from-canvas from-90% to-transparent">
         <div>
             {#if latestPost && latestPost[1].image}
                 {@const [slug, meta] = latestPost}
 
-                <button
-                    onclick={() => goto(resolve(`/blog/[slug]`, { slug }))}
-                    class="h-64 w-full select-none group *:transition-all *:duration-150 *:ease-out *:group-hover:scale-110 cursor-pointer"
+                <a
+                    href={resolve(`/blog/[slug]`, { slug })}
+                    class="relative block h-64 w-full overflow-hidden select-none group *:transition-all *:duration-150 *:ease-out *:group-hover:scale-110 cursor-pointer"
                 >
-                    <div class="relative z-10 top-1/2 -translate-y-1/2 not-group-hover:opacity-0">
-                        <h2>Go to latest post</h2>
-                        <span class="text-muted">{meta.title}</span>
-                    </div>
                     <enhanced:img
-                        class="relative object-cover h-full w-full mask-[linear-gradient(to_bottom,black,transparent)] group-hover:brightness-90 group-hover:blur-xs"
+                        class="absolute inset-0 h-full w-full object-cover mask-[linear-gradient(to_bottom,black_60%,transparent)] group-hover:brightness-90 group-hover:blur-xs"
                         alt={`${meta.title} - Preview`}
                         src={meta.image!}
                     />
-                </button>
+                    <div class="absolute inset-0 z-1 flex flex-col items-center justify-center text-center px-4 not-group-hover:opacity-0">
+                        <h2>Go to latest post</h2>
+                        <span class="text-muted">{meta.title}</span>
+                    </div>
+                </a>
             {/if}
             <div class="flex flex-row justify-center items-center gap-3">
                 <h1 class="inline">Blog Posts</h1>
@@ -123,9 +123,12 @@
             </div>
         </div>
     </header>
-    <main class="my-10 w-full max-sm:flex max-sm:flex-col sm:grid sm:grid-cols-2 gap-3 border-t lg:border-l lg:border-r lg:mb-5 lg:border-b border-muted bg-surface p-3">
+    <main class="my-10 lg:mx-6 max-sm:flex max-sm:flex-col sm:grid sm:grid-cols-2 gap-3 border-t lg:border-l lg:border-r lg:mb-5 lg:border-b border-muted bg-surface/50 p-3">
         {#each filteredPosts as post (post[0])}
             {@render postItem(post)}
         {/each}
     </main>
+
 </div>
+
+<Background />

@@ -4,11 +4,11 @@
     import { untrack, type Component } from "svelte";
     import { HOSTNAME, NAME } from "$lib/const";
     import nerdFontWoff from "$lib/assets/fonts/nerd-font.woff2?url"
-    import bgVideo from "$lib/assets/vid/bg.webm"
-    import bgVideoPoster from "$lib/assets/img/bg.webm-poster.webp"
 	import WelcomeSection from "$lib/components/sections/welcome.svelte"
     import Link from "@/lib/components/Link.svelte";
     import { resolve } from "$app/paths";
+    import Background from "@/lib/components/Background.svelte";
+    import Tooltip from "@/lib/components/Tooltip.svelte";
 
     type SectionType = Component | Promise<{ default: Component }>
 
@@ -173,17 +173,12 @@
 
 <!-- explicit footer -->
 <footer class="text-sm fixed bottom-2 left-1/2 -translate-x-1/2 flex flex-row gap-10">
-    <a title="Terms of Use" href={resolve("/terms")}>Terms</a>
-    <Link title="Source Code" href="https://codeberg.org/jakeayy/jakeayy.ch">Source Code</Link>
+    <Tooltip text="Terms of Use"><a href={resolve("/terms")}>Terms</a></Tooltip>
+    <Tooltip text="🤍"><Link href="https://codeberg.org/jakeayy/jakeayy.ch">Source Code</Link></Tooltip>
 </footer>
 
 <!-- background -->
-<video
-    class="fixed left-0 top-0 -z-10 w-full h-full object-cover blur-xs brightness-25"
-    autoplay muted loop playsinline poster={bgVideoPoster}
->
-    <source src={bgVideo} type="video/webm" />
-</video>
+<Background />
 
 <style lang="postcss">
     @reference "./layout.css";
