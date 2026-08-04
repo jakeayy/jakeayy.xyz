@@ -18,5 +18,6 @@ export const CONTACT = [
     { type: "matrix", url: "https://matrix.to/#/@jakeayy:tchncs.de" },
     { type: "mail", url: "mailto:contact@jakeayy.xyz" },
     { type: "discord", text: "jakeayy.ch" },
-    { type: "telegram", url: "http://telegram.me/jakeayy_tg" }
+  { type: "telegram", url: "http://telegram.me/jakeayy_tg" },
+    { type: "fluxer", "text": "jakeayy#5402" }
 ] as const satisfies SocialMedia[]

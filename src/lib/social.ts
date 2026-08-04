@@ -7,6 +7,7 @@ import TwitterLogo from "$lib/assets/icons/twitter.svg?component"
 import BlueskyLogo from "$lib/assets/icons/bluesky.svg?component"
 import TelegramLogo from "$lib/assets/icons/telegram.svg?component"
 import CodebergLogo from "$lib/assets/icons/codeberg.svg?component"
+import FluxerLogo from "$lib/assets/icons/fluxer.svg?component"
 
 import type { Component } from "svelte"
 
@@ -19,7 +20,8 @@ export const ICON_MAP = {
     twitter: TwitterLogo,
     bluesky: BlueskyLogo,
     telegram: TelegramLogo,
-    codeberg: CodebergLogo
+  codeberg: CodebergLogo,
+    fluxer: FluxerLogo
 } as const satisfies Record<string, Component>
 
 export type SocialTypes = keyof typeof ICON_MAP

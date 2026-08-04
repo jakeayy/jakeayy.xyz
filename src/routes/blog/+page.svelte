@@ -88,7 +88,7 @@
                     class="relative block h-64 w-full overflow-hidden select-none group *:transition-all *:duration-150 *:ease-out *:group-hover:scale-110 cursor-pointer"
                 >
                     <enhanced:img
-                        class="absolute inset-0 h-full w-full object-cover mask-[linear-gradient(to_bottom,black_60%,transparent)] group-hover:brightness-90 group-hover:blur-xs"
+                        class="absolute inset-0 h-full w-full object-cover mask-[linear-gradient(to_bottom,black_60%,transparent)] not-group-hover:grayscale group-hover:brightness-90 group-hover:blur-xs"
                         alt={`${meta.title} - Preview`}
                         src={meta.image!}
                     />

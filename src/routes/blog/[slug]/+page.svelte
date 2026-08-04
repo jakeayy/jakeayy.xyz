@@ -41,7 +41,7 @@
 				fetchpriority="high"
 				src={data.meta.image}
 				alt={`${data.meta.title} - Preview`}
-				class="object-cover object-center h-32 w-full transition-all duration-500 ease-out hover:h-128 not-hover:mask-[linear-gradient(to_bottom,black,transparent)]"
+				class="object-cover object-center h-32 w-full transition-all duration-500 ease-out not-hover:grayscale hover:h-128 not-hover:mask-[linear-gradient(to_bottom,black,transparent)]"
 			/>
 		{/if}
 		<div class="flex flex-col gap-2">
