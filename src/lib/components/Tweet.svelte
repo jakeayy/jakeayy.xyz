@@ -9,7 +9,7 @@
 	let { data }: Props = $props()
 </script>
 
-<blockquote class="not-prose border-faint border p-4 flex flex-col gap-3 my-2 max-w-4xl place-self-center">
+<blockquote class="not-prose border-faint bg-black/20 border p-4 flex flex-col gap-3 my-2 max-w-4xl place-self-center">
 	{#if data.text}
 		<div class="flex flex-row items-center gap-2 text-muted">
 			{#if data.avatarUrl}
@@ -31,14 +31,21 @@
 		</div>
 		<p class="whitespace-pre-line">{data.text}</p>
 		{#if data.photos.length > 0}
-			<div class="flex flex-row flex-wrap gap-2">
+			<div class="flex flex-row overflow-x-auto gap-2 py-4">
 				{#each data.photos as photo (photo)}
-					<img
-						src={photo}
-						alt="Tweet media"
-						class="max-h-80 border border-faint object-cover"
-						loading="lazy"
-					/>
+					<a
+    					target="_blank"
+    					rel="noreferrer noopener external"
+                        href={photo}
+                        class="block shrink-0"
+					>
+    					<img
+    						src={photo}
+    						alt="Tweet media"
+    						class="max-h-80 border border-faint object-cover"
+    						loading="lazy"
+    					/>
+					</a>
 				{/each}
 			</div>
 		{/if}
