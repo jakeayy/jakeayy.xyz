@@ -4,7 +4,7 @@ date: 2026-08-03
 description: Some ideas I got this month I want to eventually make
 image: assets/roadmap-08-26.png
 tags: ["roadmap"]
-published: false
+published: true
 ---
 
 Hi! For the past few weeks I've been really and I mean **REALLY** busy. Mainly things such as work, moving out etc. But since I am currently getting in more stable grounds I decided I'll create a roadmap of what I currently think of doing and what I might do in future when I'll have more capabilities. That's also my second ever post, I expected initially to make them quite often but well, I'm not a good writer.

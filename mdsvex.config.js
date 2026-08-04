@@ -2,6 +2,7 @@ import { escapeSvelte } from "mdsvex";
 import { getSingletonHighlighter } from "shiki";
 
 import remarkOptimizeImages from "./plugins/remark/optimizeImages.js"
+import remarkEmbedTweets from "./plugins/remark/embedTweets.js"
 import remarkReplaceLinks from './plugins/remark/replaceLinks.js';
 import remarkLinkHeadings from "./plugins/remark/linkHeadings.js"
 import jakeayyCodeTheme from "./jakeayy-code-theme.js"
@@ -26,7 +27,7 @@ async function highlighter(code, lang = 'text') {
 /** @type {import("mdsvex").MdsvexOptions} */
 const config = {
     extensions: ['.svx', '.md'],
-    remarkPlugins: [remarkOptimizeImages, remarkReplaceLinks, remarkLinkHeadings],
+    remarkPlugins: [remarkOptimizeImages, remarkEmbedTweets, remarkReplaceLinks, remarkLinkHeadings],
     highlight: { highlighter }
 }
 

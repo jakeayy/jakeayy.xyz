@@ -24,7 +24,10 @@ const config = {
           // shiki and svelte style need inlines
           "style-src-attr": ["unsafe-inline"],
           "style-src-elem": ["self"],
-          "img-src": ["self", "data:"],
+        "img-src": [
+          "self", "data:",
+          "https://pbs.twimg.com" // (plugins/remark/embedTweets.js + src/lib/components/Tweet.svelte)
+        ],
           "font-src": ["self", "data:"],
           "connect-src": ["self"],
           "object-src": ["none"],
