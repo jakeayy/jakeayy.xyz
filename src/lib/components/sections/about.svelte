@@ -16,7 +16,7 @@
             Hey! My name is <b>{NAME}</b> (aka {USERNAME}) and I'm passionated around various computer topics including
             computer programming, security researching or just creating content!
             <br><br>
-            I'm currently most known for projects such as <Link href="https://github.com/jakeayy/gif-validator">Discord GIFs Validator</Link>
+            I'm currently most known for projects such as <Link href="https://codeberg.org/jakeayy/gif-validator">Discord GIFs Validator</Link>
             and <Link href="https://codeberg.org/jakeayy/Starshift">my mod loader for <Tooltip text="ISAT = In Stars and Time"><span>ISAT</span></Tooltip>!</Link>
         </span>
     </div>
